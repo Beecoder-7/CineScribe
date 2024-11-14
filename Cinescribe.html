@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CineScribe</title>
+    <!-- Font Awesome CDN -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #FFF0DC;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        .header {
+            background: linear-gradient(to right, #ff0000, #ff1a1a, #ff3333);
+            color: white;
+            height: 215px;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            flex-direction: column;
+        }
+        .title {
+            font-family: 'Brush Script MT', cursive;
+            font-size: 7rem;
+            margin: 0;
+        }
+        .tagline {
+            font-size: 1rem;
+            font-style: italic;
+            margin: 0;
+        }
+        .projector {
+            position: absolute;
+            bottom: -0.3px;
+            left: -0.3px;
+            width: 355px;
+            z-index: 2; /* Ensures projector appears in front of the film strip */
+        }
+        .attribution {
+            font-family: "Arial", "Helvetica", sans-serif;
+            font-size: 1rem;
+            position: absolute;
+            bottom: 10px;
+            right: 15px;
+            color: #FFF;
+        }
+        .nav-buttons {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            text-align: right;
+        }
+        .nav-buttons a {
+            background-color: #FFF;
+            border: 2px solid #E63946;
+            border-radius: 10px;
+            color: #E63946;
+            display: inline-block;
+            font-size: 1rem;  /* Smaller font size */
+            margin: 0 8px;  /* Reduced margin */
+            padding: 8px 16px;  /* Reduced padding */
+            text-decoration: none;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        .nav-buttons a i {
+            color: #E63946; /* Red icon color */
+            margin-right: 6px; /* Reduced space between icon and text */
+        }
+        .nav-buttons a:hover {
+            background-color: #E63946;
+            color: white;
+        }
+
+        /* Image slideshow styles */
+        .slideshow-container {
+            position: relative;
+            max-width: 100%;
+            height: 300px; /* Adjust the height as needed */
+            margin-top: 0px;
+        }
+        .slide {
+            display: none;
+            width: 100%;
+            height: 125%;
+        }
+        .slideshow-container img {
+            width: 100%;
+            height: 125%;
+            object-fit: cover; /* Ensures images cover the container */
+            transition: all 0.1s ease; /* Transition for the darken effect */
+        }
+
+        /* Add darkening effect when image is clicked with smooth transition */
+        .slideshow-container a:active img {
+            filter: brightness(70%);  /* Darkens the image when clicked */
+            transition: all 0.1s ease; /* Add smooth transition */
+        }
+
+        /* Title box in upper left corner */
+        .title-box {
+            position: absolute;
+            top: 7px;
+            left: 7px;
+            background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black background */
+            color: white;
+            padding: 5px;
+            font-size: 1.2rem;
+            border-radius: 5px;
+            z-index: 3;
+        }
+
+        /* Dots (navigation circles) at the bottom */
+        .dot-container {
+            position: absolute;
+            bottom: -150px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+        }
+        .dot {
+            height: 15px;
+            width: 15px;
+            margin: 0 5px;
+            background-color: #bbb;
+            border-radius: 50%;
+            display: inline-block;
+            transition: background-color 0.3s;
+        }
+        .active {
+            background-color: #E63946; /* Red color for the active dot */
+        }
+
+        /* Arrows (Left and Right) */
+        .arrow-left, .arrow-right {
+            position: absolute;
+            top: 80%;
+            transform: translateY(-50%);
+            font-size: 2rem;
+            color: #E63946;
+            cursor: pointer;
+            z-index: 5;
+        }
+        .arrow-left {
+            left: 10px;
+        }
+        .arrow-right {
+            right: 10px;
+        }
+
+        /* Footer styles */
+        .footer {
+            background: linear-gradient(to right, #ff0000, #ff1a1a, #ff3333);
+            color: white;
+            text-align: center;
+            padding: 10px;
+            height: 11px; /* Same height as the header */
+            position: fixed; /* Fixed at the bottom of the screen */
+            bottom: 0;
+            width: 100%;
+            font-size: 1rem;
+            margin: 0; /* Remove any margin */
+            border: none; /* Remove border */
+        }
+
+        .footer p {
+            margin: 0; /* Remove the margin for the paragraph */
+        }
+
+        .footer .footer-links {
+            margin-top: 0px;
+        }
+
+        .footer .footer-links a {
+            color: white;
+            text-decoration: none;
+            margin: 0px;
+            font-size: 1rem;
+        }
+
+        .footer .footer-links a:hover {
+            text-decoration: underline;
+        }
+
+        /* Main content area to prevent footer overlap */
+        .main-content {
+            padding-bottom: 20px; /* Add padding equal to the footer height to prevent content from being hidden */
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <!-- Title -->
+        <div class="title">CineScribe</div>
+        
+        <!-- Tagline -->
+        <p class="tagline">Find the Perfect Film, Every Time.</p>
+        
+        <!-- Projector Image -->
+        <img src="camera.png" alt="Projector Image" class="projector"> <!-- Replace 'camera.png' with your projector image path -->
+
+        <!-- Attribution Text -->
+        <div class="attribution">by the Group of SAZE</div>
+    </div>
+    
+    <!-- Main content area -->
+    <div class="main-content">
+        <!-- Navigation Buttons -->
+        <div class="nav-buttons">
+            <a href="#" onclick="reloadPage()"><i class="fas fa-home"></i> Home</a> <!-- Home button with house icon -->
+            <a href="about.html"><i class="fas fa-question"></i> About</a> <!-- About button with question mark icon -->
+            <a href="explore.html"><i class="fas fa-play"></i> Explore</a> <!-- Explore button with play icon -->
+            <a href="search.html"><i class="fas fa-search"></i> Search</a> <!-- Search button with magnifying glass icon -->
+        </div>
+
+        <!-- Image Slideshow -->
+        <div class="slideshow-container">
+            <!-- Title Box (Updated by JavaScript) -->
+            <div id="slide-title" class="title-box">Title of First Image</div>
+
+            <!-- Arrows -->
+            <div class="arrow-left" onclick="plusSlides(-1)">&#10094;</div>
+            <div class="arrow-right" onclick="plusSlides(1)">&#10095;</div>
+
+            <!-- Slides -->
+            <div class="slide fade">
+                <a href="stranger-things.html" onclick="navigateWithDelay(event, 'stranger-things.html')">
+                    <img src="https://pbs.twimg.com/media/EIs-iykU8AASn2x.jpg" alt="Image 1">
+                </a>
+            </div>
+            <div class="slide fade">
+                <a href="gbbt-review.html" onclick="navigateWithDelay(event, 'gbbt-review.html')">
+                    <img src="https://m.media-amazon.com/images/S/pv-target-images/cc1f2f5f77c4c48ed68585e6778e2a4e12971940fe27202459e522c69d952b44.jpg" alt="Image 2">
+                </a>
+            </div>
+            <div class="slide fade">
+                <a href="accidentally-in-love.html" onclick="navigateWithDelay(event, 'ail-review.html')">
+                    <img src="https://i.ytimg.com/vi/D1zYyL2o85Q/maxresdefault.jpg" alt="Image 3">
+                </a>
+            </div>
+            <div class="slide fade">
+                <a href="the-hows-of-us.html" onclick="navigateWithDelay(event, 'thou-review.html')">
+                    <img src="thou.png" alt="Image 4">
+                </a>
+            </div>
+
+            <!-- Dots -->
+            <div class="dot-container">
+                <span class="dot"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2024 CineScribe by SAZE. All rights reserved.</p>
+        <div class="footer-links">
+            <a href="privacy.html">Privacy Policy</a>
+            <a href="terms.html">Terms of Service</a>
+        </div>
+    </footer>
+
+    <script>
+        let slideIndex = 0;
+        const slides = document.getElementsByClassName("slide");
+        const dots = document.getElementsByClassName("dot");
+        const titleBox = document.getElementById("slide-title");
+
+        // Titles for each slide
+        const slideTitles = [
+            "Stranger Things",
+            "Girl Boy Bakla Tomboy",
+            "Accidentally in Love",
+            "The Hows of Us"
+        ];
+
+        // Function to show slides based on the slideIndex
+        function showSlides() {
+            for (let i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";  // Hide all slides
+            }
+            for (let i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" active", "");
+            }
+            slides[slideIndex].style.display = "block";  // Show the current slide
+            dots[slideIndex].className += " active";  // Add active class to the current dot
+            titleBox.innerHTML = slideTitles[slideIndex];  // Update the title text
+        }
+
+        // Function to move to the next or previous slide
+        function plusSlides(n) {
+            slideIndex += n;  // Increment or decrement the slide index based on the arrow click
+            if (slideIndex >= slides.length) { slideIndex = 0; }  // Loop to the first slide if the next is clicked
+            if (slideIndex < 0) { slideIndex = slides.length - 1; }  // Loop to the last slide if the previous is clicked
+            showSlides();  // Update the slide display immediately
+        }
+
+        // Change the slide every 4 seconds
+        setInterval(() => {
+            plusSlides(1);
+        }, 4000);  // Change image every 4 seconds
+
+        // Initial call to show the first slide
+        showSlides();
+
+        // JavaScript function to add delay before navigation
+        function navigateWithDelay(event, url) {
+            event.preventDefault();  // Prevent immediate navigation
+            const link = event.currentTarget;
+
+            // Add darken effect and transition
+            link.querySelector('img').style.filter = 'brightness(70%)';
+            setTimeout(function() {
+                window.location.href = url;  // Navigate after 300 millisecond
+            }, 300);  // 300-millisecond delay before navigating
+        }
+
+        // Reload the page to reset the site state
+        function reloadPage() {
+            window.location.reload();  // Reload the page to reset the website
+        }
+    </script>
+</body>
+</html>
