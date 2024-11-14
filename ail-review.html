@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accidentally in Love - CineScribe</title>
+    <!-- Font Awesome CDN for icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        /* Basic reset and global styles */
+        body {
+            background-color: #FFF0DC;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;  /* Stack elements vertically */
+            min-height: 100vh; /* Ensure the body takes up the entire viewport height */
+        }
+
+        /* Main header with centered title and tagline */
+        .main-header {
+            background: linear-gradient(to right, #ff0000, #ff1a1a, #ff3333);
+            height: 50px;
+            padding: 10px;
+            display: flex;
+            justify-content: center; /* Center title and tagline */
+            align-items: center; /* Vertically center */
+            position: relative;
+        }
+
+        .main-header .header-title {
+            display: flex;
+            align-items: center;
+            color: white;
+            justify-content: center;
+        }
+
+        .title {
+            font-family: 'Brush Script MT', cursive;
+            font-size: 4rem;
+            margin: 0;
+        }
+
+        .tagline {
+            font-size: 1.5rem;
+            font-style: italic;
+            margin-left: 10px; /* Space between title and tagline */
+        }
+
+        /* Navigation buttons positioned on the top right */
+        .nav-buttons {
+            position: absolute;
+            top: 10px;
+            right: 10px; /* Positioned at the upper right corner */
+            display: flex;
+        }
+
+        .nav-buttons a {
+            background-color: #FFF;
+            border: 2px solid #E63946;
+            border-radius: 10px;
+            color: #E63946;
+            display: inline-block;
+            font-size: 1rem;
+            margin: 0 8px;
+            padding: 8px 16px;
+            text-decoration: none;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .nav-buttons a i {
+            margin-right: 6px; /* Space between icon and text */
+        }
+
+        .nav-buttons a:hover {
+            background-color: #E63946;
+            color: white;
+        }
+
+        /* Movie content section */
+        .main-content {
+            flex-grow: 1; /* Allow this section to grow and take up remaining space */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            flex-direction: column; /* Allow for stacked content */
+        }
+
+        .movie-content {
+            text-align: center;
+        }
+
+        .movie-content img {
+            width: 910px;
+            height: auto;
+            border-radius: 10px;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .movie-content img:hover {
+            transform: scale(1.05); /* Zoom effect on hover */
+        }
+
+        .movie-content p {
+            font-size: 1.2rem;
+            color: #333;
+            margin-top: 10px;
+        }
+
+        /* Review section styling */
+        .movie-review {
+            background: linear-gradient(to right, #FF3D00, #FF7043, #FF9800);
+            padding: 20px;
+            border-radius: 10px;
+            color: white;
+            margin-top: 20px;
+            text-align: left;
+        }
+
+        .movie-review h3 {
+            margin-top: 0;
+        }
+
+        .movie-review p {
+            margin: 5px 0;
+        }
+
+        /* Footer styles */
+        .footer {
+            background: linear-gradient(to right, #ff0000, #ff1a1a, #ff3333);
+            color: white;
+            text-align: center;
+            padding: 10px;
+            font-size: 1rem;
+            width: 100%;
+            margin: 0; /* Remove margin */
+            border: none;
+        }
+
+        .footer p {
+            margin: 0;
+        }
+
+        .footer .footer-links a {
+            color: white;
+            text-decoration: none;
+            font-size: 1rem;
+        }
+
+        .footer .footer-links a:hover {
+            text-decoration: underline;
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- Main header with centered title and tagline -->
+    <div class="main-header">
+        <!-- Title and tagline centered -->
+        <div class="header-title">
+            <div class="title">CineScribe</div>
+            <p class="tagline">by SAZE</p>
+        </div>
+
+        <!-- Navigation buttons in the top right corner -->
+        <div class="nav-buttons">
+            <a href="CineScribe.html"><i class="fas fa-home"></i> Home</a> <!-- Updated to absolute link -->
+            <a href="about.html"><i class="fas fa-question"></i> About</a>
+            <a href="explore.html"><i class="fas fa-play"></i> Explore</a>
+            <a href="search.html"><i class="fas fa-search"></i> Search</a>
+        </div>
+    </div>
+
+    <!-- Main movie content section -->
+    <div class="main-content">
+        <div class="movie-content">
+            <img src="https://i.ytimg.com/vi/D1zYyL2o85Q/maxresdefault.jpg" alt="Stranger Things Poster">
+            <p><b>ACCIDENTALLY IN LOVE REVIEW</b></p>
+
+            <!-- Review Section -->
+            <div class="movie-review">
+                <p><strong>Title:</strong>Accidentally in Love</p>
+                <p><strong>Genre:</strong> Romantic Comedy, Drama, Slice of Life</p>
+                <p><strong>Country:</strong> China</p>
+                <p><strong>Status:</strong> Completed</p>
+                <p><strong>Episodes:</strong> 24</p>
+                <p><strong>Priority:</strong> Low</p>
+                <p><strong>Times Rewatched:</strong> 1</p>
+                <p><strong>Rewatch Value:</strong> Low</p>
+                <p><strong>Themes/Message of the Series:</strong> Accidentally in Love explores themes of fate, identity, and personal growth. The series delves into the complexities of love, trust, and the unexpected ways relationships evolve. It highlights how true love often comes when least expected, and how important it is to remain true to yourself, even when navigating complex situations.</p>
+                <p><strong>Enjoyment Factor:</strong> The series is undeniably charming with its playful and quirky characters. The chemistry between the leads is adorable, and the storyline keeps you invested with its mix of sweet moments, misunderstandings, and personal growth. While some clichés pop up throughout the plot, the show's lighthearted tone and endearing performances make it an enjoyable watch, perfect for fans of romantic comedies.</p>
+                <p><strong>Overall Review:</strong> 6.5/10 – Accidentally in Love is a feel-good series that delivers on both romance and laughs. While it doesn’t break new ground in terms of plot, it’s a delightful watch for anyone looking for a fun and sweet drama. With its lovable characters and heartwarming moments, it’s a perfect binge for fans of the genre.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2024 CineScribe by SAZE. All rights reserved.</p>
+        <div class="footer-links">
+        </div>
+    </footer>
+
+    <!-- JavaScript for page transition effect -->
+    <script>
+        // Function to handle page transition effects
+        window.addEventListener("beforeunload", function () {
+            document.body.style.opacity = "0"; // Fade out before leaving the page
+            document.body.style.transform = "scale(0.98)"; // Slight scale down effect
+        });
+
+        window.addEventListener("load", function () {
+            document.body.style.opacity = "1"; // Fade in after page is loaded
+            document.body.style.transform = "scale(1)"; // Reset scale to normal
+        });
+    </script>
+
+</body>
+</html>

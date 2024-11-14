@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Hows of Us - CineScribe</title>
+    <!-- Font Awesome CDN for icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        /* Basic reset and global styles */
+        body {
+            background-color: #FFF0DC;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;  /* Stack elements vertically */
+            min-height: 100vh; /* Ensure the body takes up the entire viewport height */
+        }
+
+        /* Main header with centered title and tagline */
+        .main-header {
+            background: linear-gradient(to right, #ff0000, #ff1a1a, #ff3333);
+            height: 50px;
+            padding: 10px;
+            display: flex;
+            justify-content: center; /* Center title and tagline */
+            align-items: center; /* Vertically center */
+            position: relative;
+        }
+
+        .main-header .header-title {
+            display: flex;
+            align-items: center;
+            color: white;
+            justify-content: center;
+        }
+
+        .title {
+            font-family: 'Brush Script MT', cursive;
+            font-size: 4rem;
+            margin: 0;
+        }
+
+        .tagline {
+            font-size: 1.5rem;
+            font-style: italic;
+            margin-left: 10px; /* Space between title and tagline */
+        }
+
+        /* Navigation buttons positioned on the top right */
+        .nav-buttons {
+            position: absolute;
+            top: 10px;
+            right: 10px; /* Positioned at the upper right corner */
+            display: flex;
+        }
+
+        .nav-buttons a {
+            background-color: #FFF;
+            border: 2px solid #E63946;
+            border-radius: 10px;
+            color: #E63946;
+            display: inline-block;
+            font-size: 1rem;
+            margin: 0 8px;
+            padding: 8px 16px;
+            text-decoration: none;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .nav-buttons a i {
+            margin-right: 6px; /* Space between icon and text */
+        }
+
+        .nav-buttons a:hover {
+            background-color: #E63946;
+            color: white;
+        }
+
+        /* Movie content section */
+        .main-content {
+            flex-grow: 1; /* Allow this section to grow and take up remaining space */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            flex-direction: column; /* Allow for stacked content */
+        }
+
+        .movie-content {
+            text-align: center;
+        }
+
+        .movie-content img {
+            width: 920px;
+            height: auto;
+            border-radius: 10px;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .movie-content img:hover {
+            transform: scale(1.05); /* Zoom effect on hover */
+        }
+
+        .movie-content p {
+            font-size: 1.2rem;
+            color: #333;
+            margin-top: 10px;
+        }
+
+        /* Review section styling */
+        .movie-review {
+            background: linear-gradient(to right, #FF3D00, #FF7043, #FF9800);
+            padding: 20px;
+            border-radius: 10px;
+            color: white;
+            margin-top: 20px;
+            text-align: left;
+        }
+
+        .movie-review h3 {
+            margin-top: 0;
+        }
+
+        .movie-review p {
+            margin: 5px 0;
+        }
+
+        /* Footer styles */
+        .footer {
+            background: linear-gradient(to right, #ff0000, #ff1a1a, #ff3333);
+            color: white;
+            text-align: center;
+            padding: 10px;
+            font-size: 1rem;
+            width: 100%;
+            margin: 0; /* Remove margin */
+            border: none;
+        }
+
+        .footer p {
+            margin: 0;
+        }
+
+        .footer .footer-links a {
+            color: white;
+            text-decoration: none;
+            font-size: 1rem;
+        }
+
+        .footer .footer-links a:hover {
+            text-decoration: underline;
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- Main header with centered title and tagline -->
+    <div class="main-header">
+        <!-- Title and tagline centered -->
+        <div class="header-title">
+            <div class="title">CineScribe</div>
+            <p class="tagline">by SAZE</p>
+        </div>
+
+        <!-- Navigation buttons in the top right corner -->
+        <div class="nav-buttons">
+            <a href="CineScribe.html"><i class="fas fa-home"></i> Home</a> <!-- Updated to absolute link -->
+            <a href="about.html"><i class="fas fa-question"></i> About</a>
+            <a href="explore.html"><i class="fas fa-play"></i> Explore</a>
+            <a href="search.html"><i class="fas fa-search"></i> Search</a>
+        </div>
+    </div>
+
+    <!-- Main movie content section -->
+    <div class="main-content">
+        <div class="movie-content">
+            <img src="https://i.ytimg.com/vi/UGi7iZKz_5I/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLAnFxyjnJnEBFzguu1wrwk4B7QQ1Q" alt="The Hows of Us Poster">
+            <p><b>THE HOWS OF US REVIEW</b></p>
+
+            <!-- Review Section -->
+            <div class="movie-review">
+                <p><strong>Title:</strong>The Hows of Us</p>
+                <p><strong>Genre:</strong> Romance, Drama</p>
+                <p><strong>Country:</strong> Philippines</p>
+                <p><strong>Status:</strong> Completed</p>
+                <p><strong>Episodes:</strong> 1</p>
+                <p><strong>Priority:</strong> High</p>
+                <p><strong>Times Rewatched:</strong> 5</p>
+                <p><strong>Rewatch Value:</strong> High – This film is deeply relatable and emotionally resonant, with strong performances and themes that feel real and relevant. Each rewatch reveals new layers of the characters' relationship, making it a heartfelt experience every time.</p>
+                <p><strong>Themes/Message of the Series:</strong> The Hows of Us explores themes of love, commitment, sacrifice, and the challenges of long-term relationships. The film delves into the struggles couples face when dreams and expectations clash, highlighting the importance of communication, compromise, and resilience in love.</p>
+                <p><strong>Enjoyment Factor:</strong> I found The Hows of Us both touching and engaging. The chemistry between the lead actors and the realistic portrayal of relationship struggles made it easy to connect with. It's an emotional rollercoaster that balances both heartbreak and hope.</p>
+                <p><strong>Overall Review:</strong> 9/10 – The Hows of Us is a heartwarming and relatable romantic drama that delves into the complexities of love, commitment, and the challenges of long-term relationships. With standout performances by Kathryn Bernardo and Daniel Padilla, the film explores the ups and downs of a young couple trying to balance their personal dreams with their evolving relationship. While it treads familiar territory, the movie is emotionally charged and engaging, offering a raw portrayal of love's struggles and triumphs. The chemistry between the leads and the poignant storytelling make it a compelling watch for fans of romance and drama alike.</p>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2024 CineScribe by SAZE. All rights reserved.</p>
+        <div class="footer-links">
+        </div>
+    </footer>
+
+    <!-- JavaScript for page transition effect -->
+    <script>
+        // Function to handle page transition effects
+        window.addEventListener("beforeunload", function () {
+            document.body.style.opacity = "0"; // Fade out before leaving the page
+            document.body.style.transform = "scale(0.98)"; // Slight scale down effect
+        });
+
+        window.addEventListener("load", function () {
+            document.body.style.opacity = "1"; // Fade in after page is loaded
+            document.body.style.transform = "scale(1)"; // Reset scale to normal
+        });
+    </script>
+
+</body>
+</html>
